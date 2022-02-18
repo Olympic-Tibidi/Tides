@@ -352,7 +352,7 @@ def ciz_la(k,x,y):
 
 
 
-begin_date=datetime.datetime.now()-datetime.datetime.timedelta(hours=8)                     ###############            STREAMLIT PROBLEM
+begin_date=datetime.datetime.now()-datetime.timedelta(hours=8)                     ###############            STREAMLIT PROBLEM
 
 data=()
 if data not in st.session_state:
