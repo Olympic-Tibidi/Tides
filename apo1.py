@@ -20,9 +20,9 @@ from collections import defaultdict
 from requests import get
 from st_aggrid import AgGrid
 import os
-import shutil
+
 from collections import defaultdict
-import cv2
+
 import time
 import json
 from bs4 import BeautifulSoup
