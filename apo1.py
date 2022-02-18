@@ -1,11 +1,10 @@
 import pandas as pd
 import datetime
 import numpy as np
-import plotly.express as px
-import plotly.graph_objects as go
+
 import streamlit as st
 from st_aggrid import AgGrid
-import tabula
+
 #import pyodbc 
 import re
 
@@ -27,19 +26,7 @@ import cv2
 import time
 import json
 from bs4 import BeautifulSoup
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common.keys import Keys
-import xml.etree.ElementTree as ET
-#from selenium.webdriver.chrome.options import Options
-#from selenium.webdriver.common.keys import Keys
-import dataframe_image as dfi
-from streamlit_folium import folium_static
-import folium
+
 
 #import datetime as dt
 import xml.etree.ElementTree as ET
