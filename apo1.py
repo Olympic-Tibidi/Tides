@@ -9,6 +9,7 @@ from st_aggrid import AgGrid
 import re
 
 import time
+import pytz
 #import feather
 
 import matplotlib.pyplot as plt
@@ -213,11 +214,11 @@ def ciz_la(k,x,y):
 
     d=ax1[1].plot(x, y, linewidth=3,alpha=0.9,zorder=1)
 
-
-    now=date2num(datetime.datetime.now())
+    nowel=pytz.timezone('America/Los_Angeles').localize(datetime.datetime.now())
+    now=date2num(nowel)
     xt = ax1[1].get_xticks()
     #print(xt)
-    if datetime.datetime.now()>=begin_date:
+    if nowel>=begin_date:
         xt=np.append(xt,now)
     #print(xt)
     xtl=xt.tolist()
@@ -235,11 +236,11 @@ def ciz_la(k,x,y):
     now_lbl=f" Time Now: {datetime.datetime.strftime(datetime.datetime.now(),'%H:%M')}"
 
 
-    if datetime.datetime.now()>=begin_date:
+    if nowel()>=begin_date:
         ax1[1].vlines(now, ax1[1].get_ylim()[0],ax1[1].get_ylim()[1], 'r')
 
 
-    if datetime.datetime.now()>=begin_date:
+    if nowel>=begin_date:
         ax1[1].text(
         now,ax1[1].get_ylim()[1]/1.2,
         now_lbl,
@@ -310,7 +311,7 @@ def ciz_la(k,x,y):
         horizontalalignment='center',
         color='black',
         weight='bold')
-    if datetime.datetime.now()>=begin_date:
+    if nowel>=begin_date:
         ax1[0].text(
         now,ax1[0].get_ylim()[1]/1.1,
         now_lbl,
@@ -323,7 +324,7 @@ def ciz_la(k,x,y):
         size=13
     )
 
-    if datetime.datetime.now()>=begin_date:
+    if nowel>=begin_date:
         ax1[0].vlines(now, ax1[0].get_ylim()[0],ax1[0].get_ylim()[1], 'r')
 
 
@@ -354,6 +355,7 @@ def ciz_la(k,x,y):
 
 
 begin_date=datetime.datetime.now()
+begin_date=pytz.timezone('America/Los_Angeles').localize(begin_date)
 
 data=()
 if data not in st.session_state:
