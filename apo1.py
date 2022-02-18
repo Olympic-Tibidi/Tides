@@ -390,11 +390,12 @@ if selection== "Ship Schedule":
 
 if selection=='Wind/Tides':
 
-    button = st.button("Refresh Data")
+    
     d = st.date_input(
             "Choose Begin Date", begin_date.date())
     t = st.time_input('Choose Begin Time',begin_date.time())
-    
+    button = st.button("Get New Data")
+    st.caption('Click button after changing date/time.')
     if button:
         
         begin_date=datetime.datetime.combine(d,t)
