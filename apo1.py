@@ -212,12 +212,12 @@ def ciz_la(k,x,y):
 
     d=ax1[1].plot(x, y, linewidth=3,alpha=0.9,zorder=1)
 
-
-    now=date2num(datetime.datetime.now()-datetime.timedelta(hours=8) )        ###############            STREAMLIT PROBLEM
+    now=datetime.datetime.now()-datetime.timedelta(hours=8) 
+    nowel=date2num(datetime.datetime.now()-datetime.timedelta(hours=8) )        ###############            STREAMLIT PROBLEM
     xt = ax1[1].get_xticks()
     #print(xt)
     if now>=begin_date:          ###############            STREAMLIT PROBLEM
-        xt=np.append(xt,now)
+        xt=np.append(xt,nowel)
     #print(xt)
     xtl=xt.tolist()
     #xtl[-1]="Here is 1.5"
