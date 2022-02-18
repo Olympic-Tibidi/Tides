@@ -236,7 +236,7 @@ def ciz_la(k,x,y):
     now_lbl=f" Time Now: {datetime.datetime.strftime(datetime.datetime.now(),'%H:%M')}"
 
 
-    if nowel()>=begin_date:
+    if nowel>=begin_date:
         ax1[1].vlines(now, ax1[1].get_ylim()[0],ax1[1].get_ylim()[1], 'r')
 
 
