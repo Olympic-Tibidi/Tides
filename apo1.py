@@ -309,7 +309,7 @@ def ciz_la(k,x,y):
         horizontalalignment='center',
         color='black',
         weight='bold')
-    if now()>=begin_date:                  ###############            STREAMLIT PROBLEM
+    if now>=begin_date:                  ###############            STREAMLIT PROBLEM
         ax1[0].text(
         now,ax1[0].get_ylim()[1]/1.1,
         now_lbl,
@@ -322,7 +322,7 @@ def ciz_la(k,x,y):
         size=13
     )
 
-    if now()>=begin_date:                      ###############            STREAMLIT PROBLEM    
+    if now>=begin_date:                      ###############            STREAMLIT PROBLEM    
         ax1[0].vlines(now, ax1[0].get_ylim()[0],ax1[0].get_ylim()[1], 'r')
 
 
