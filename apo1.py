@@ -213,10 +213,10 @@ def ciz_la(k,x,y):
     d=ax1[1].plot(x, y, linewidth=3,alpha=0.9,zorder=1)
 
 
-    now=date2num(datetime.datetime.now())        ###############            STREAMLIT PROBLEM
+    now=date2num(datetime.datetime.now()-datetime.timedelta(hours=8) )        ###############            STREAMLIT PROBLEM
     xt = ax1[1].get_xticks()
     #print(xt)
-    if datetime.datetime.now()>=begin_date:          ###############            STREAMLIT PROBLEM
+    if now>=begin_date:          ###############            STREAMLIT PROBLEM
         xt=np.append(xt,now)
     #print(xt)
     xtl=xt.tolist()
@@ -231,14 +231,14 @@ def ciz_la(k,x,y):
     # set font and rotation for date tick labels
     plt.gcf().autofmt_xdate()
 
-    now_lbl=f" Time Now: {datetime.datetime.strftime(datetime.datetime.now(),'%H:%M')}"              ###############            STREAMLIT PROBLEM
+    now_lbl=f" Time Now: {datetime.datetime.strftime(datetime.datetime.now()-datetime.timedelta(hours=8) ,'%H:%M')}"              ###############            STREAMLIT PROBLEM
 
 
-    if datetime.datetime.now()>=begin_date:                                  ###############            STREAMLIT PROBLEM
+    if now>=begin_date:                                  ###############            STREAMLIT PROBLEM
         ax1[1].vlines(now, ax1[1].get_ylim()[0],ax1[1].get_ylim()[1], 'r')
 
 
-    if datetime.datetime.now()>=begin_date:                  ###############            STREAMLIT PROBLEM
+    if now>=begin_date:                  ###############            STREAMLIT PROBLEM
         ax1[1].text(
         now,ax1[1].get_ylim()[1]/1.2,
         now_lbl,
@@ -309,7 +309,7 @@ def ciz_la(k,x,y):
         horizontalalignment='center',
         color='black',
         weight='bold')
-    if datetime.datetime.now()>=begin_date:                  ###############            STREAMLIT PROBLEM
+    if now>=begin_date:                  ###############            STREAMLIT PROBLEM
         ax1[0].text(
         now,ax1[0].get_ylim()[1]/1.1,
         now_lbl,
@@ -322,7 +322,7 @@ def ciz_la(k,x,y):
         size=13
     )
 
-    if datetime.datetime.now()>=begin_date:                      ###############            STREAMLIT PROBLEM    
+    if now>=begin_date:                      ###############            STREAMLIT PROBLEM    
         ax1[0].vlines(now, ax1[0].get_ylim()[0],ax1[0].get_ylim()[1], 'r')
 
 
