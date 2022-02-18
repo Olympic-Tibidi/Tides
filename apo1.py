@@ -10,7 +10,7 @@ import re
 
 import time
 #import feather
-from tabula.io import read_pdf
+
 import matplotlib.pyplot as plt
 import os
 import glob
