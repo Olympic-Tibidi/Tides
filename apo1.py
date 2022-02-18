@@ -392,6 +392,8 @@ if selection== "Ship Schedule":
 
 
 if selection=='Wind/Tides':
+    begin_date=datetime.datetime.now()
+    begin_date=pytz.timezone('America/Los_Angeles').localize(begin_date)
 
     button = st.button("Refresh Data")
     d = st.date_input(
