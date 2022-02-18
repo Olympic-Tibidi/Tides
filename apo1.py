@@ -111,7 +111,7 @@ def get_data(date):
         begin_date=datetime.datetime.strftime(begin_date,'%Y%m%d %H:%M')
 
        
-        now=datetime.datetime.now()
+        
       
 
         resp = get(f'https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?begin_date={begin_date}&range=24&station={station}&datum=MLLW&product=predictions&units=english&time_zone=lst&application=ports_screen&format=xml')
@@ -233,7 +233,7 @@ def ciz_la(k,x,y):
     # set font and rotation for date tick labels
     plt.gcf().autofmt_xdate()
 
-    now_lbl=f" Time Now: {datetime.datetime.strftime(datetime.datetime.now(),'%H:%M')}"
+    now_lbl=f" Time Now: {datetime.datetime.strftime(nowel,'%H:%M')}"
 
 
     if nowel>=begin_date:
