@@ -499,7 +499,7 @@ if selection=='Wind/Tides':
         begin_date=datetime.datetime.combine(d,t)
         tuple_data=get_data(begin_date)
         ciz_la(tuple_data)
-        st.session_state.data=(k,x,y)
+        st.session_state.data=tuple_data
     with st.container():
         
         k,x,y=st.session_state.data[0],st.session_state.data[1],st.session_state.data[2]
