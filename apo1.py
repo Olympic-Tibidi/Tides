@@ -497,8 +497,8 @@ if selection=='Wind/Tides':
     if button:
         
         begin_date=datetime.datetime.combine(d,t)
-        k,x,y=get_data(begin_date)
-        ciz_la(k,x,y)
+        tuple_data=get_data(begin_date)
+        ciz_la(tuple_data)
         st.session_state.data=(k,x,y)
     with st.container():
         
