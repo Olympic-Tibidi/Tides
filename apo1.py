@@ -229,9 +229,7 @@ def get_weather_frame():
 def ciz_la(tuple_data):
     plt.rcdefaults()
 
-    k,x,y,high_tides,low_tides,high_tides_times,low_tides_times,high_tides_pd,low_tides_pd=tuple_data[0],tuple_data[1],
-                                                                    tuple_data[2],tuple_data[3],tuple_data[4],tuple_data[5],tuple_data[6],
-                                                                    tuple_data[7],tuple_data[8]
+    k,x,y,high_tides,low_tides,high_tides_times,low_tides_times,high_tides_pd,low_tides_pd=tuple_data[0],tuple_data[1],tuple_data[2],tuple_data[3],tuple_data[4],tuple_data[5],tuple_data[6],                                                                    tuple_data[7],tuple_data[8]
         ###############col_map = plt.get_cmap('tab20')
 
     fig, ax1 = plt.subplots(2,1,figsize=(16,12),gridspec_kw={'height_ratios': [8,15]},sharex=True)
