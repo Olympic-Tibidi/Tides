@@ -68,37 +68,37 @@ def get_data(date):
         angle= mpcalc.parse_angle(angle_str)
         angle=re.findall(f'\d*\.?\d?',angle.__str__())[0]
         return float(angle)
-    def get_weather():
+    def get_weather_frame():
+
+
         weather=defaultdict(int)
-        headers = { 
-                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36', 
-                'Accept' : 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 
-                'Accept-Language' : 'en-US,en;q=0.5', 
-                'Accept-Encoding' : 'gzip', 
-                'DNT' : '1', # Do Not Track Request Header 
-                'Connection' : 'close' }
-        url ='https://api.weather.gov/gridpoints/SEW/117,51/forecast/hourly'
+        url ='https://api.weather.gov/gridpoints/SEW/117,51/forecast'
         #url='https://api.weather.gov/points/47.0379,-122.9007'   #### check for station info with lat/long
         durl='https://api.weather.gov/alerts?zone=WAC033'
-        response = get(url,headers=headers)
-        desponse=get(durl)
-        data = json.loads(response.text)
-        datan=json.loads(desponse.text)
-        #print(data)
+        headers = { 
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36', 
+            'Accept' : 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 
+             'Accept-Language' : 'en-US,en;q=0.5', 
+             'Accept-Encoding' : 'gzip', 
+              'DNT' : '1', # Do Not Track Request Header 
+             'Connection' : 'close' }
 
-        for period in data['properties']['periods']:
+        response = get(url,headers=headers).json()
+
+        #print(response)
+        for period in response['properties']['periods']:
             date=datetime.datetime.strptime(period['startTime'],'%Y-%m-%dT%H:%M:%S-08:00')
-            #date_f=dt.datetime.strftime(dt.datetime.strptime(period['startTime'],'%Y-%m-%dT%H:%M:%S-08:00'),"%b-%d %H:%M")
-            #date=f'{date_f} {period["name"]}' 
+            date_f=datetime.datetime.strftime(datetime.datetime.strptime(period['startTime'],'%Y-%m-%dT%H:%M:%S-08:00'),"%b-%d")
+            date=f'{date_f} {period["name"]}' 
             #print(date)
             #print(period)
-            weather[date]={'Wind_Direction':f'{period["windDirection"]}','Wind_Speed':f'{period["windSpeed"]}'}
+            weather[date]={'Temp':period['temperature'],'Wind':f'{period["windDirection"]}-{period["windSpeed"]}',
+                        'Forecast':period['shortForecast'],'Detail':period['detailedForecast']}
 
-        wind_forecast=pd.DataFrame.from_dict(weather,orient='index')
-        wind_forecast.Wind_Speed=[int(re.findall(f'\d+',i)[0]) for i in wind_forecast.Wind_Speed.values]
-        wind_forecast['Vector']=[vectorize(parse_angle(i),j) for i,j in zip(wind_forecast.Wind_Direction.values,wind_forecast.Wind_Speed.values)]
 
-        return wind_forecast
+        weather_forecast=pd.DataFrame.from_dict(weather,orient='index')
+        weather_forecast.drop('Detail',axis=1,inplace=True)
+        return weather_forecast
 
     def find_tyde(stat,begin_date):
         station='9446484' if stat=='TAC' else '9447130'
