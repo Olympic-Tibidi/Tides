@@ -455,9 +455,9 @@ begin_date=datetime.datetime.now()-datetime.timedelta(hours=8)                  
 
 data=()
 if data not in st.session_state:
-    k,x,y=get_data(begin_date)
-    ciz_la(k,x,y)
-    st.session_state.data=(k,x,y)
+    tuple_data=get_data(begin_date)
+    ciz_la(tuple_data)
+    st.session_state.data=tuple_data
 
 
 
