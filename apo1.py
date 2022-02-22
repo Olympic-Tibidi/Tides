@@ -229,7 +229,7 @@ def get_weather_frame():
 def ciz_la(tuple_data):
     plt.rcdefaults()
 
-    k,x,y,high_tides,low_tides,high_tides_times,low_tides_times,high_tides_pd,low_tides_pd=tuple_data[0],tuple_data[1],tuple_data[2],tuple_data[3],tuple_data[4],tuple_data[5],tuple_data[6],                                                                    tuple_data[7],tuple_data[8]
+    k,x,y,high_tides,low_tides,high_tides_times,low_tides_times,high_tides_pd,low_tides_pd=tuple_data[0],tuple_data[1],tuple_data[2],tuple_data[3],tuple_data[4],tuple_data[5],tuple_data[6],tuple_data[7],tuple_data[8]
         ###############col_map = plt.get_cmap('tab20')
 
     fig, ax1 = plt.subplots(2,1,figsize=(16,12),gridspec_kw={'height_ratios': [8,15]},sharex=True)
@@ -288,10 +288,10 @@ def ciz_la(tuple_data):
     ax1[1].set_xticklabels(num2date(xtl))
 
     nl = '\n'
-    high_tide1_label=f"High Tide : {round(high_tides[0][1],1)}ft @{nl}{dt.datetime.strftime(high_tides_pd[0],'%H:%M')}"
-    high_tide2_label=f"High Tide : {round(high_tides[1][1],1)}ft @{nl}{dt.datetime.strftime(high_tides_pd[1],'%H:%M')}"
-    low_tide1_label=f"Low Tide : {round(low_tides[0][1],1)}ft @{nl}{dt.datetime.strftime(low_tides_pd[0],'%H:%M')}"
-    low_tide2_label=f"Low Tide : {round(low_tides[1][1],1)}ft @{nl}{dt.datetime.strftime(low_tides_pd[1],'%H:%M')}"
+    high_tide1_label=f"High Tide : {round(high_tides[0][1],1)}ft @{nl}{datetime.datetime.strftime(high_tides_pd[0],'%H:%M')}"
+    high_tide2_label=f"High Tide : {round(high_tides[1][1],1)}ft @{nl}{datetime.datetime.strftime(high_tides_pd[1],'%H:%M')}"
+    low_tide1_label=f"Low Tide : {round(low_tides[0][1],1)}ft @{nl}{datetime.datetime.strftime(low_tides_pd[0],'%H:%M')}"
+    low_tide2_label=f"Low Tide : {round(low_tides[1][1],1)}ft @{nl}{datetime.datetime.strftime(low_tides_pd[1],'%H:%M')}"
 
     ax1[1].vlines(high_tides_times[0], ax1[1].get_ylim()[0],high_tides[0][1], 'g',ls="--")
     ax1[1].vlines(high_tides_times[1], ax1[1].get_ylim()[0],high_tides[1][1], 'g',ls="--")
