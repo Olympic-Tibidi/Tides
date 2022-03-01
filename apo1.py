@@ -291,7 +291,7 @@ def ciz_la(tuple_data):
     high_tide1_label=f"High Tide : {round(high_tides[0][1],1)}ft @{nl}{datetime.datetime.strftime(high_tides_pd[0],'%H:%M')}"
     ax1[1].vlines(high_tides_times[0], ax1[1].get_ylim()[0],high_tides[0][1], 'g',ls="--")
     ax1[1].text(
-        high_tides_times[0],high_tides[0][1]+2,
+        high_tides_times[0],high_tides[0][1]-2,
         high_tide1_label,
         horizontalalignment='center',
         color='black',
@@ -305,7 +305,7 @@ def ciz_la(tuple_data):
         high_tide2_label=f"High Tide : {round(high_tides[1][1],1)}ft @{nl}{datetime.datetime.strftime(high_tides_pd[1],'%H:%M')}"
         ax1[1].vlines(high_tides_times[1], ax1[1].get_ylim()[0],high_tides[1][1], 'g',ls="--")
         ax1[1].text(
-        high_tides_times[1],high_tides[1][1]+2,
+        high_tides_times[1],high_tides[1][1]-2,
         high_tide2_label,
         horizontalalignment='center',
         color='black',
@@ -318,7 +318,7 @@ def ciz_la(tuple_data):
     low_tide1_label=f"Low Tide : {round(low_tides[0][1],1)}ft @{nl}{datetime.datetime.strftime(low_tides_pd[0],'%H:%M')}"
     ax1[1].vlines(low_tides_times[0], ax1[1].get_ylim()[0],low_tides[0][1], 'g',ls="--")
     ax1[1].text(
-        low_tides_times[0],low_tides[0][1]-1,
+        low_tides_times[0],low_tides[0][1]+1,
         low_tide1_label,
         horizontalalignment='center',
         color='black',
@@ -332,7 +332,7 @@ def ciz_la(tuple_data):
         low_tide2_label=f"Low Tide : {round(low_tides[1][1],1)}ft @{nl}{datetime.datetime.strftime(low_tides_pd[1],'%H:%M')}"
         ax1[1].vlines(low_tides_times[1], ax1[1].get_ylim()[0],low_tides[1][1], 'g',ls="--")
         ax1[1].text(
-        low_tides_times[1],low_tides[1][1]-1,
+        low_tides_times[1],low_tides[1][1]+1,
         low_tide2_label,
         horizontalalignment='center',
         color='black',
