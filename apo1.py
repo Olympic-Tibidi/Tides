@@ -239,7 +239,7 @@ def ciz_la(tuple_data):
 
 
     d=ax1[1].plot(x, y, linewidth=3,alpha=0.9,zorder=1)
-    ax1[1].set_ylim(-1,15)
+    ax1[1].set_ylim(-3,15)
     now=datetime.datetime.now()-datetime.timedelta(hours=8) 
     nowel=date2num(datetime.datetime.now()-datetime.timedelta(hours=8) )        ###############            STREAMLIT PROBLEM
     xt = ax1[1].get_xticks()
