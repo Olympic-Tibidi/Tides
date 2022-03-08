@@ -494,7 +494,7 @@ if selection=='Wind/Tides':
     if button:
         
         ###begin_date=datetime.datetime.combine(d,t)  #    LETS NOT CHOOOSE FOR NOW
-        begin_date=begin_date=datetime.datetime.now()-datetime.timedelta(hours=8) 
+        begin_date=datetime.datetime.now()-datetime.timedelta(hours=8) 
         tuple_data=get_data(begin_date)
         ciz_la(tuple_data)
         st.session_state.data=tuple_data
