@@ -87,7 +87,10 @@ def get_data(date):
         #print(data)
 
         for period in data['properties']['periods']:
-            date=datetime.datetime.strptime(period['startTime'],'%Y-%m-%dT%H:%M:%S-08:00')
+            try:
+                date=datetime.datetime.strptime(period['startTime'],'%Y-%m-%dT%H:%M:%S-08:00')
+            except:
+                date=datetime.datetime.strptime(period['startTime'],'%Y-%m-%dT%H:%M:%S-07:00')
             #date_f=dt.datetime.strftime(dt.datetime.strptime(period['startTime'],'%Y-%m-%dT%H:%M:%S-08:00'),"%b-%d %H:%M")
             #date=f'{date_f} {period["name"]}' 
             #print(date)
