@@ -490,7 +490,7 @@ if selection=='Wind/Tides':
     #         "Choose Begin Date", begin_date.date())
     # t = st.sidebar.time_input('Choose Begin Time',begin_date.time())
     button = st.sidebar.button("Refresh Data")
-
+    begin_date=datetime.datetime.now()-datetime.timedelta(hours=8) 
     if button:
         
         ###begin_date=datetime.datetime.combine(d,t)  #    LETS NOT CHOOOSE FOR NOW
