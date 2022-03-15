@@ -635,6 +635,6 @@ if selection == "Container Check":
     st.header("Enter Container Number to verify; if it is missing a digit, replace the digit with a '?'")
     st.header('Enter Container Number to Check')
     container = st.text_input('Container Number')
-    button = st.sidebar.button("Check Container")
+    button = st.button("Check Container")
     if button :
         st.title(guess_missing_number(container))
