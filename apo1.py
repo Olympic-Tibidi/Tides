@@ -633,9 +633,9 @@ if selection=='Wind/Tides':
 
 if selection == "Container Check":
     st.header("Verifies a container number, or finds the missing digit/letter based on an algorithm back-engineered from the BIC convention.") 
-    st.header("Enter Container Number to verify (use capital letters for Letters; Use question mark ('?') in place of missing digit or letter,Then click button")
+    st.header("Enter Container Number to verify (use capital letters for Letters; Use question mark ('?') in place of missing digit or letter. Finally click 'CHECK' button")
     
     container = st.text_input('Container Number')
-    button = st.button("Check Container")
+    button = st.button("CHECK")
     if button :
         st.title(guess_missing_number(container))
