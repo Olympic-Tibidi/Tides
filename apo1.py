@@ -568,7 +568,7 @@ def guess_missing_number(container):
     if type(target) is list:
         return target, [container.replace('?',str(i)) for i in target]
         
-    return target,container.replace('?',str(target))
+    return f"Missing Digit is {target} and container number is {container.replace('?',str(target))}"
     
 owner_codes= pickle.load(open("owner_codes.dat", "rb"))
 letter_dict= pickle.load(open("bic_letters.dat", "rb"))
@@ -632,8 +632,8 @@ if selection=='Wind/Tides':
         st.image(image, caption='Chart Compiled By Afsin Yilmaz')
 
 if selection == "Container Check":
-    st.header("Enter Container Number to verify; if it is missing a digit, replace the digit with a '?'")
-    st.header('Enter Container Number to Check')
+    st.header("Enter Container Number to verify (use capital letters for Letters; Use question mark ('?') in place of missing digit")
+    st.header('Enter Container Number to Check and Click Button')
     container = st.text_input('Container Number')
     button = st.button("Check Container")
     if button :
