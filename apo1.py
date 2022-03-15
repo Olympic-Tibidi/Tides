@@ -632,7 +632,8 @@ if selection=='Wind/Tides':
         st.image(image, caption='Chart Compiled By Afsin Yilmaz')
 
 if selection == "Container Check":
-    st.header("Enter Container Number to verify (use capital letters for Letters; Use question mark ('?') in place of missing digit")
+    st.header("Verifies a container number, or finds the missing digit/letter based on an algorithm back-engineered from the BIC convention.") 
+    st.header("Enter Container Number to verify (use capital letters for Letters; Use question mark ('?') in place of missing digit or letter")
     st.header('Enter Container Number to Check and Click Button')
     container = st.text_input('Container Number')
     button = st.button("Check Container")
