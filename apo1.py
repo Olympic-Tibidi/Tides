@@ -632,9 +632,9 @@ if selection=='Wind/Tides':
         st.image(image, caption='Chart Compiled By Afsin Yilmaz')
 
 if selection == "Container Check":
-    st.caption("Enter Container Number to verify; if it is missing a digit, replace the digit with a '?'")
+    st.header("Enter Container Number to verify; if it is missing a digit, replace the digit with a '?'")
     st.header('Enter Container Number to Check')
-    container = st.text_input()
+    container = st.text_input('Container Number')
     button = st.sidebar.button("Check Container")
     if button :
         st.title(guess_missing_number(container))
