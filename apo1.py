@@ -566,7 +566,7 @@ def guess_missing_number(container):
         l=calculate_letters(a)
         target=n+l-(int((n+l)/11)*11)
     if type(target) is list:
-        return target, [container.replace('?',str(i)) for i in target]
+        return f"Missing Letter can be one of {target},and possible container numbers: {[container.replace('?',str(i)) for i in target]}"
         
     return f"Missing Digit is {target} and container number is {container.replace('?',str(target))}"
     
