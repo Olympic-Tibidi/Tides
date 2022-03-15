@@ -87,7 +87,7 @@ def get_data(date):
         #print(data)
 
         for period in data['properties']['periods']:
-            date=datetime.datetime.strptime(period['startTime'],'%Y-%m-%dT%H:%M:%S-08:00')
+            date=datetime.datetime.strptime(period['startTime'],'%Y-%m-%dT%H:%M:%S-07:00')
             #date_f=dt.datetime.strftime(dt.datetime.strptime(period['startTime'],'%Y-%m-%dT%H:%M:%S-08:00'),"%b-%d %H:%M")
             #date=f'{date_f} {period["name"]}' 
             #print(date)
@@ -573,7 +573,7 @@ def guess_missing_number(container):
 owner_codes= pickle.load(open("owner_codes.dat", "rb"))
 letter_dict= pickle.load(open("bic_letters.dat", "rb"))
 
-begin_date=datetime.datetime.now()-datetime.timedelta(hours=8)                     ###############            STREAMLIT PROBLEM
+begin_date=datetime.datetime.now()-datetime.timedelta(hours=7)                     ###############            STREAMLIT PROBLEM
 
 data=()
 if data not in st.session_state:
