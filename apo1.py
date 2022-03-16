@@ -632,7 +632,7 @@ if selection=='Wind/Tides':
         st.image(image, caption='Chart Compiled By Afsin Yilmaz')
 
 if selection == "Container Check":
-    st.subheader("Verifies a container number, or finds the missing digit/letter based on an algorithm reverse engineered from the BIC convention algorithm. For missing digits it produces the only possibility. For missing letters it produces up to 3 possibilities.") 
+    st.subheader("Verifies a container number, or finds the missing digit/letter based on an algorithm reverse engineered from the BIC convention algorithm. For missing digits it produces the one and only possibility. For missing letters it produces up to 3 possibilities.") 
     st.subheader("Enter Container Number to verify (use capital letters for Letters; Use question mark ('?') in place of missing digit or letter. Finally click 'CHECK' button")
     st.markdown('E.g : Container Number : SZLU9313?14 (with a missing/failed to read digit) or S?LU9313014 (with a missing/failed to read Letter)')
     container = st.text_input('Container Number')
